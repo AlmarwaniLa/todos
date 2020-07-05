@@ -4,7 +4,11 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "start": "nodemon server.js"
+        "start": "nodemon server.js",
+        "db:create": "createdb --echo todos",
+        "db:drop": "dropdb --echo --if-exists todos",
+        "db:migrate": "npx knex migrate:latest",
+        "db:reset": "npm run dp:drop && npm run db:create && npm run db:migrate"
     },
     "keywords": [],
     "author": "",
